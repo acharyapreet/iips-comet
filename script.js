@@ -1,15 +1,53 @@
 // Conference Website JavaScript - script.js
 
-// Smooth scrolling for navigation links
+// // Smooth scrolling for navigation links
+// document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+//   anchor.addEventListener("click", function (e) {
+//     e.preventDefault();
+//     const target = document.querySelector(this.getAttribute("href"));
+//     if (target) {
+//       target.scrollIntoView({
+//         behavior: "smooth",
+//         block: "start",
+//       });
+//     }
+//   });
+// });
+
+// Custom Smooth Scrolling with Easing
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+    const targetId = this.getAttribute("href");
+    const targetElement = document.querySelector(targetId);
+
+    if (targetElement) {
+      const targetPosition = targetElement.getBoundingClientRect().top;
+      const startPosition = window.pageYOffset;
+      const duration = 700; // You can adjust this speed
+      let startTime = null;
+
+      // Easing function (starts fast, ends slow) - CHANGED TO EASE-OUT
+      function easeOutQuad(t, b, c, d) {
+        t /= d;
+        return -c * t * (t - 2) + b;
+      }
+
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        // The function call below is now easeOutQuad
+        const run = easeOutQuad(
+          timeElapsed,
+          startPosition,
+          targetPosition,
+          duration
+        );
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+      }
+
+      requestAnimationFrame(animation);
     }
   });
 });
@@ -26,8 +64,10 @@ function scrollToTop() {
 window.addEventListener("scroll", function () {
   const backToTop = document.querySelector(".back-to-top");
   if (window.pageYOffset > 300) {
+    // Agar page 300 pixels se zyada scroll hua hai, to button dikhao
     backToTop.style.display = "block";
   } else {
+    // Warna button ko छिपा do
     backToTop.style.display = "none";
   }
 });
