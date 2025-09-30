@@ -153,3 +153,26 @@ document.querySelectorAll(".nav-menu a").forEach((link) => {
     }
   });
 });
+
+// Mobile menu toggle functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileMenuButton = document.querySelector(".mobile-menu");
+  const navMenu = document.querySelector(".nav-menu");
+
+  if (mobileMenuButton && navMenu) {
+    mobileMenuButton.addEventListener("click", function () {
+      // Toggle the 'nav-menu--open' class on the navigation menu
+      navMenu.classList.toggle("nav-menu--open");
+    });
+  }
+
+  // Close mobile menu when a link is clicked
+  document.querySelectorAll(".nav-menu a").forEach((link) => {
+    link.addEventListener("click", function () {
+      if (navMenu.classList.contains("nav-menu--open")) {
+        navMenu.classList.remove("nav-menu--open");
+      }
+    });
+  });
+});
+

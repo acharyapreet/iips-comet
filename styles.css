@@ -322,20 +322,7 @@ nav {
   align-items: center;
 }
 
-/* .image-placeholder {
-  width: 100%;
-  height: 300px;
-  background: linear-gradient(135deg, var(--light-gray) 0%, #d1d5db 100%);
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-} */
+
 
 .image-placeholder {
   background: none; /* remove grey background */
@@ -680,4 +667,120 @@ html {
   align-items: flex-start;
   gap: 2rem;
   justify-content: flex-start; /* Ensure content starts from the left */
+}
+
+/* styles.css */
+
+/* Responsive Design - Add this at the very end of your file */
+@media (max-width: 768px) {
+  /* --- Mobile Navigation --- */
+  .nav-menu {
+    /* Hide the menu off-screen by default */
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%; /* Menu takes up 80% of screen width */
+    height: 100vh;
+    background: var(--white);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    padding-top: 5rem;
+    gap: 1.5rem;
+    align-items: center;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 999; /* Below the header but above content */
+  }
+
+  /* This is the active state, toggled by JavaScript */
+  .nav-menu.nav-menu--open {
+    transform: translateX(0);
+  }
+
+  .nav-menu a {
+    font-size: 1.2rem;
+  }
+
+  .cta-button {
+    display: none; /* Hide the main 'Register Now' button in the nav bar */
+  }
+
+  .mobile-menu {
+    display: block; /* Show the hamburger menu icon */
+    z-index: 1001; /* Ensure it's on top of everything */
+  }
+
+  /* --- General Layout Adjustments --- */
+  section {
+    padding: 60px 0; /* Reduce top/bottom padding on sections */
+  }
+  
+  .container {
+    padding: 0 15px; /* Reduce side padding */
+  }
+
+  .section-title {
+    font-size: 2rem; /* Reduce section title font size */
+    margin-bottom: 2rem;
+  }
+  
+  /* --- Hero Section --- */
+  .hero {
+    padding: 120px 0 60px;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem; /* Smaller main title */
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  .logos-grid {
+    grid-template-columns: repeat(3, 1fr); /* Ensure logos stay in a row but smaller */
+  }
+  .logo-img {
+    max-width: 80px; /* Make logos smaller */
+  }
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid instead of a single column */
+  }
+
+  /* --- About & University Sections --- */
+  .about-grid,
+  .institution-content,
+  .institution-content.reverse {
+    grid-template-columns: 1fr; /* Stack grids to a single column */
+    gap: 2rem;
+    direction: ltr; /* Reset direction for reverse block */
+  }
+
+  .institution-highlights {
+    flex-direction: column; /* Stack highlight cards */
+  }
+  
+  .image-placeholder img {
+    width: 100%; /* Make images take full width */
+    max-width: 400px;
+  }
+
+  /* --- Speakers, Committee & Tracks --- */
+  .speakers-grid, .committee-grid, .tracks {
+    grid-template-columns: 1fr; /* Single column for card layouts */
+  }
+
+  /* --- Timeline Section --- */
+  .timeline-item {
+    flex-direction: column; /* Stack date and content vertically */
+    align-items: flex-start;
+  }
+
+  .timeline-date {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .timeline-content {
+    margin-left: 0;
+  }
 }
