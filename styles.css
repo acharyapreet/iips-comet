@@ -164,81 +164,178 @@ nav {
   font-weight: bold;
   color: var(--accent-color);
 }
+/* --- Styles for "About the Conference" Section Content --- */
 
-/* About Section */
-.about {
-  padding: 80px 0;
-  background: var(--white);
+/* Subheadings inside "About" section (Made Smaller) */
+#about h3,
+#about .section-subtitle {
+    font-size: 1.5rem; /* Smaller Font Size */
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
 }
 
-.section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: var(--primary-color);
-  position: relative;
+#about .section-subtitle {
+    text-align: center;
+    font-size: 1.8rem; /* Smaller Font Size */
+    margin-top: 4rem;
 }
 
-.section-title::after {
-  content: "";
-  width: 80px;
-  height: 4px;
-  background: var(--accent-color);
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
+#about p {
+    color: #4a5568;
+    line-height: 1.8;
 }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  margin-bottom: 4rem;
+/* Grid for Background & Rationale */
+#about .about-grid {
+    gap: 3rem;
+    margin-bottom: 3rem;
 }
 
-.about-text {
-  font-size: 1.1rem;
-  line-height: 1.8;
+/* Grid for features like Objectives and Themes */
+#about .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+#about .feature-box {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 5px solid var(--accent-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+#about .feature-box h4 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+#about .feature-box ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+#about .feature-box li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+#about .feature-box li::before {
+    content: '✔';
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
 }
 
-.about-features {
-  display: grid;
-  gap: 1rem;
+/* Accordion styles */
+#about .accordion-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+#about .accordion-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+#about .accordion-header {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem 1.5rem;
+    border: none;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#about .accordion-header:hover {
+    background-color: var(--secondary-color);
+}
+#about .accordion-icon {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+#about .accordion-item.active .accordion-icon {
+    transform: rotate(45deg);
+}
+#about .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 1.5rem;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+#about .accordion-content ul {
+    padding-left: 20px;
+    margin-top: 1rem;
 }
 
-.feature-card {
-  background: var(--light-gray);
-  padding: 1.5rem;
-  border-radius: 10px;
-  border-left: 4px solid var(--accent-color);
+/* Info Box for Program Structure */
+#about .info-box-container {
+    margin-top: 4rem;
+}
+#about .info-box {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+}
+#about .info-box h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
 }
 
-.tracks {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
+/* Outcomes Section Styles */
+#about .outcomes-section {
+    margin-top: 4rem;
+}
+#about .outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+#about .outcome-card {
+    background-color: var(--light-gray);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: left;
+}
+#about .outcome-card h5 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
 }
 
-.track-card {
-  background: var(--primary-color);
-  color: var(--white);
-  padding: 2rem;
-  border-radius: 15px;
-  text-align: center;
-  transition: transform 0.3s;
+/* Final Info Grid for last points */
+#about .final-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+#about .info-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+#about .info-card h4 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
-.track-card:hover {
-  transform: translateY(-5px);
-}
-
-.track-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
+/* =================================================================== */
+/* END: FINAL CSS Block                                              */
+/* =================================================================== */
 /* University & Institute Section */
 .university {
   padding: 80px 0;
@@ -718,11 +815,25 @@ html {
     padding: 0 15px; /* Reduce side padding */
   }
 
-  .section-title {
-    font-size: 2rem; /* Reduce section title font size */
-    margin-bottom: 2rem;
-  }
+/* --- Main Section Titles (Reverted to your original style) --- */
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--primary-color);
+  position: relative;
+}
 
+.section-title::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: var(--accent-color);
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
   /* --- Hero Section --- */
   .hero {
     padding: 120px 0 60px;

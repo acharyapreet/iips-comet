@@ -1,19 +1,4 @@
 // Conference Website JavaScript - script.js
-
-// // Smooth scrolling for navigation links
-// document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-//   anchor.addEventListener("click", function (e) {
-//     e.preventDefault();
-//     const target = document.querySelector(this.getAttribute("href"));
-//     if (target) {
-//       target.scrollIntoView({
-//         behavior: "smooth",
-//         block: "start",
-//       });
-//     }
-//   });
-// });
-
 // Custom Smooth Scrolling with Easing
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
@@ -92,32 +77,6 @@ document.querySelectorAll("section > div").forEach((section) => {
   observer.observe(section);
 });
 
-// Mobile menu toggle functionality
-document.addEventListener("DOMContentLoaded", function () {
-  const mobileMenu = document.querySelector(".mobile-menu");
-  const navMenu = document.querySelector(".nav-menu");
-
-  if (mobileMenu && navMenu) {
-    mobileMenu.addEventListener("click", function () {
-      // Toggle mobile menu visibility
-      if (navMenu.style.display === "flex") {
-        navMenu.style.display = "none";
-      } else {
-        navMenu.style.display = "flex";
-        navMenu.style.flexDirection = "column";
-        navMenu.style.position = "absolute";
-        navMenu.style.top = "100%";
-        navMenu.style.left = "0";
-        navMenu.style.right = "0";
-        navMenu.style.backgroundColor = "#ffffff";
-        navMenu.style.boxShadow = "0 2px 10px rgba(0,0,0,0.1)";
-        navMenu.style.padding = "1rem";
-        navMenu.style.zIndex = "1000";
-      }
-    });
-  }
-});
-
 // Form validation function (for future use)
 function validateForm() {
   // Add form validation logic here when forms are implemented
@@ -144,29 +103,19 @@ window.addEventListener("scroll", function () {
   }
 });
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll(".nav-menu a").forEach((link) => {
-  link.addEventListener("click", function () {
-    const navMenu = document.querySelector(".nav-menu");
-    if (window.innerWidth <= 768) {
-      navMenu.style.display = "none";
-    }
-  });
-});
-
-// Mobile menu toggle functionality
+// Corrected Mobile Menu Logic
 document.addEventListener("DOMContentLoaded", function () {
   const mobileMenuButton = document.querySelector(".mobile-menu");
   const navMenu = document.querySelector(".nav-menu");
 
   if (mobileMenuButton && navMenu) {
+    // Show/hide menu when hamburger icon is clicked
     mobileMenuButton.addEventListener("click", function () {
-      // Toggle the 'nav-menu--open' class on the navigation menu
       navMenu.classList.toggle("nav-menu--open");
     });
   }
 
-  // Close mobile menu when a link is clicked
+  // Close mobile menu when a link inside it is clicked
   document.querySelectorAll(".nav-menu a").forEach((link) => {
     link.addEventListener("click", function () {
       if (navMenu.classList.contains("nav-menu--open")) {
@@ -175,4 +124,35 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+ /* ====================================================== */
+/* START: Accordion Functionality                       */
+/* ====================================================== */
+document.addEventListener("DOMContentLoaded", function() {
+    const accordionItems = document.querySelectorAll(".accordion-item");
 
+    accordionItems.forEach(item => {
+        const header = item.querySelector(".accordion-header");
+        const content = item.querySelector(".accordion-content");
+
+        header.addEventListener("click", () => {
+            // Close other open accordions
+            accordionItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.accordion-content').style.maxHeight = null;
+                }
+            });
+
+            // Toggle the clicked accordion
+            item.classList.toggle('active');
+            if (item.classList.contains('active')) {
+                content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+                content.style.maxHeight = null;
+            }
+        });
+    });
+});
+/* ====================================================== */
+/* END: Accordion Functionality                         */
+/* ====================================================== */
