@@ -1,4 +1,6 @@
-/* Conference Website Styles - styles.css */
+/* ====================================================== */
+/* FINAL CORRECTED STYLES - styles.css           */
+/* ====================================================== */
 
 * {
   margin: 0;
@@ -23,6 +25,10 @@ body {
   background-color: var(--background-color);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -37,6 +43,7 @@ header {
   width: 100%;
   top: 0;
   z-index: 1000;
+  transition: background-color 0.3s ease;
 }
 
 nav {
@@ -144,6 +151,23 @@ nav {
   opacity: 0.9;
 }
 
+.logos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.logo-img {
+  max-width: 150px;
+  height: auto;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -164,178 +188,198 @@ nav {
   font-weight: bold;
   color: var(--accent-color);
 }
-/* --- Styles for "About the Conference" Section Content --- */
 
-/* Subheadings inside "About" section (Made Smaller) */
+/* Main Section Titles */
+.section-title {
+  display: table; 
+  margin: 0 auto 4rem auto; 
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  position: relative;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.section-title::after {
+  content: "";
+  width: 100%;
+  height: 5px;
+  background: var(--accent-color);
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+}
+
+/* About Section */
+#about {
+  padding: 80px 0;
+}
+
 #about h3,
 #about .section-subtitle {
-    font-size: 1.5rem; /* Smaller Font Size */
-    color: var(--primary-color);
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    margin-top: 2rem;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
 }
 
 #about .section-subtitle {
-    text-align: center;
-    font-size: 1.8rem; /* Smaller Font Size */
-    margin-top: 4rem;
+  text-align: center;
+  font-size: 1.8rem;
+  margin-top: 4rem;
 }
 
 #about p {
-    color: #4a5568;
-    line-height: 1.8;
+  color: #4a5568;
+  line-height: 1.8;
 }
 
-/* Grid for Background & Rationale */
 #about .about-grid {
-    gap: 3rem;
-    margin-bottom: 3rem;
+  gap: 3rem;
+  margin-bottom: 3rem;
 }
 
-/* Grid for features like Objectives and Themes */
 #about .feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
 }
 #about .feature-box {
-    background: #ffffff;
-    padding: 2rem;
-    border-radius: 15px;
-    border-left: 5px solid var(--accent-color);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 15px;
+  border-left: 5px solid var(--accent-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 #about .feature-box h4 {
-    color: var(--primary-color);
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
 }
 #about .feature-box ul {
-    list-style-type: none;
-    padding-left: 0;
+  list-style-type: none;
+  padding-left: 0;
 }
 #about .feature-box li {
-    margin-bottom: 0.5rem;
-    padding-left: 1.5rem;
-    position: relative;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
 }
 #about .feature-box li::before {
-    content: '✔';
-    color: var(--accent-color);
-    position: absolute;
-    left: 0;
-    font-weight: bold;
+  content: "✔";
+  color: var(--accent-color);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
 }
 
 /* Accordion styles */
 #about .accordion-container {
-    max-width: 900px;
-    margin: 0 auto;
+  max-width: 900px;
+  margin: 0 auto;
 }
 #about .accordion-item {
-    background-color: #ffffff;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-    overflow: hidden;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
 }
 #about .accordion-header {
-    width: 100%;
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 1rem 1.5rem;
-    border: none;
-    text-align: left;
-    font-size: 1.1rem;
-    font-weight: 500;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 1rem 1.5rem;
+  border: none;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
 }
 #about .accordion-header:hover {
-    background-color: var(--secondary-color);
+  background-color: var(--secondary-color);
 }
 #about .accordion-icon {
-    font-size: 1.5rem;
-    transition: transform 0.3s ease;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
 }
 #about .accordion-item.active .accordion-icon {
-    transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 #about .accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 1.5rem;
-    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out;
 }
 #about .accordion-content ul {
-    padding-left: 20px;
-    margin-top: 1rem;
+  padding-left: 20px;
+  margin-top: 1rem;
+}
+.accordion-item.active .accordion-content {
+  max-height: 1000px;
+  padding: 1.5rem;
 }
 
-/* Info Box for Program Structure */
 #about .info-box-container {
-    margin-top: 4rem;
+  margin-top: 4rem;
 }
 #about .info-box {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
 }
 #about .info-box h4 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--accent-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
 }
-
-/* Outcomes Section Styles */
 #about .outcomes-section {
-    margin-top: 4rem;
+  margin-top: 4rem;
 }
 #about .outcomes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
 }
 #about .outcome-card {
-    background-color: var(--light-gray);
-    padding: 1.5rem;
-    border-radius: 10px;
-    text-align: left;
+  background-color: var(--light-gray);
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: left;
 }
 #about .outcome-card h5 {
-    font-size: 1.2rem;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
 }
 
-/* Final Info Grid for last points */
 #about .final-info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 4rem;
 }
 #about .info-card {
-    background: #ffffff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 #about .info-card h4 {
-    font-size: 1.3rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
 }
 
-/* =================================================================== */
-/* END: FINAL CSS Block                                              */
-/* =================================================================== */
 /* University & Institute Section */
 .university {
   padding: 80px 0;
@@ -379,7 +423,6 @@ nav {
   display: flex;
   gap: 2rem;
   width: 100%;
-  /* justify-content: stretch; */
 }
 
 .highlight-item {
@@ -420,59 +463,24 @@ nav {
 }
 
 .image-placeholder {
-  background: none; /* remove grey background */
-  padding: 0; /* remove inner spacing */
+  background: none;
+  padding: 0;
+  transition: transform 0.3s ease;
 }
 
 .image-placeholder img {
-  width: 500px; /* make image cover full container */
-  height: 100%; /* stretch vertically */
-  object-fit: cover; /* crop proportionally */
-  border-radius: 10px; /* keep rounded corners */
+  width: 500px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
   box-shadow: 0px 20px 10px 0.5px rgba(98, 94, 94, 0.8);
-  /* transform: translateY(-50px); */
 }
 
 .image-placeholder:hover {
   transform: translateY(-5px);
 }
 
-.image-icon {
-  font-size: 4rem;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-}
-
-.image-placeholder p {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--primary-color);
-  margin-bottom: 0.5rem;
-}
-
-.image-placeholder small {
-  color: var(--accent-color);
-  font-size: 0.9rem;
-  font-style: italic;
-}
-
-/* Responsive Design for University Section */
-@media (max-width: 768px) {
-  .institution-content,
-  .institution-content.reverse {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    direction: ltr;
-  }
-
-  .institution-highlights {
-    grid-template-columns: 1fr;
-  }
-
-  .image-placeholder {
-    height: 250px;
-  }
-}
+/* Speakers Section */
 .speakers {
   padding: 80px 0;
   background: var(--background-color);
@@ -666,45 +674,7 @@ footer {
   opacity: 0.7;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .nav-menu {
-    display: none;
-  }
-
-  .mobile-menu {
-    display: block;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .timeline-item {
-    flex-direction: column;
-  }
-
-  .timeline-content {
-    margin-left: 0;
-    margin-top: 1rem;
-  }
-
-  .hero-stats {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Smooth Scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Loading Animation */
+/* Utility & Animation Classes */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -718,7 +688,6 @@ html {
   }
 }
 
-/* Back to Top Button */
 .back-to-top {
   position: fixed;
   bottom: 2rem;
@@ -739,44 +708,24 @@ html {
   transform: translateY(-2px);
 }
 
-/* Add to styles.css */
-.logos-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  justify-items: center;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-.logo-img {
-  max-width: 150px;
-  height: auto;
-  border-radius: 8px;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-/* Add Flexbox to .iips-full-content */
-.iips-full-content {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 2rem;
-  justify-content: flex-start; /* Ensure content starts from the left */
+a:focus,
+button:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
 }
 
-/* styles.css */
-
-/* Responsive Design - Add this at the very end of your file */
+/* ================================================= */
+/* === FINAL RESPONSIVE STYLES (Mobile View) === */
+/* ================================================= */
 @media (max-width: 768px) {
   /* --- Mobile Navigation --- */
   .nav-menu {
-    /* Hide the menu off-screen by default */
     display: flex;
     flex-direction: column;
     position: fixed;
     top: 0;
     left: 0;
-    width: 80%; /* Menu takes up 80% of screen width */
+    width: 80%;
     height: 100vh;
     background: var(--white);
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
@@ -785,118 +734,86 @@ html {
     align-items: center;
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
-    z-index: 999; /* Below the header but above content */
+    z-index: 999;
   }
-
-  /* This is the active state, toggled by JavaScript */
   .nav-menu.nav-menu--open {
     transform: translateX(0);
   }
-
   .nav-menu a {
     font-size: 1.2rem;
   }
-
   .cta-button {
-    display: none; /* Hide the main 'Register Now' button in the nav bar */
+    display: none;
   }
-
   .mobile-menu {
-    display: block; /* Show the hamburger menu icon */
-    z-index: 1001; /* Ensure it's on top of everything */
+    display: block;
+    z-index: 1001;
   }
 
-  /* --- General Layout Adjustments --- */
+  /* --- General Layout --- */
   section {
-    padding: 60px 0; /* Reduce top/bottom padding on sections */
+    padding: 60px 0;
   }
-
   .container {
-    padding: 0 15px; /* Reduce side padding */
+    padding: 0 15px;
   }
 
-/* --- Main Section Titles (Reverted to your original style) --- */
-.section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: var(--primary-color);
-  position: relative;
-}
+  /* --- Section Titles --- */
+  .section-title {
+    font-size: 2rem;
+  }
 
-.section-title::after {
-  content: "";
-  width: 80px;
-  height: 4px;
-  background: var(--accent-color);
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
   /* --- Hero Section --- */
   .hero {
     padding: 120px 0 60px;
   }
-
   .hero h1 {
-    font-size: 2.8rem; /* Smaller main title */
+    font-size: 2.2rem;
   }
   .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   .logos-grid {
-    grid-template-columns: repeat(
-      3,
-      1fr
-    ); /* Ensure logos stay in a row but smaller */
+    grid-template-columns: repeat(3, 1fr);
   }
   .logo-img {
-    max-width: 80px; /* Make logos smaller */
+    max-width: 80px;
   }
   .hero-stats {
-    grid-template-columns: repeat(
-      2,
-      1fr
-    ); /* 2x2 grid instead of a single column */
+    grid-template-columns: repeat(2, 1fr);
   }
 
   /* --- About & University Sections --- */
   .about-grid,
   .institution-content,
   .institution-content.reverse {
-    grid-template-columns: 1fr; /* Stack grids to a single column */
+    grid-template-columns: 1fr;
     gap: 2rem;
-    direction: ltr; /* Reset direction for reverse block */
+    direction: ltr;
   }
-
   .institution-highlights {
-    flex-direction: column; /* Stack highlight cards */
+    flex-direction: column;
   }
-
   .image-placeholder img {
-    width: 100%; /* Make images take full width */
+    width: 100%;
     max-width: 400px;
   }
 
-  /* --- Speakers, Committee & Tracks --- */
+  /* --- Other Sections --- */
   .speakers-grid,
-  .committee-grid,
-  .tracks {
-    grid-template-columns: 1fr; /* Single column for card layouts */
+  .committee-grid {
+    grid-template-columns: 1fr;
   }
 
   /* --- Timeline Section --- */
   .timeline-item {
-    flex-direction: column; /* Stack date and content vertically */
+    flex-direction: column;
     align-items: flex-start;
   }
-
   .timeline-date {
     width: 100%;
     margin-bottom: 1rem;
   }
-
   .timeline-content {
     margin-left: 0;
   }
