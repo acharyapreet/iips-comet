@@ -58,6 +58,22 @@ nav {
   font-weight: bold;
   color: var(--primary-color);
 }
+/* Make all logos the same height */
+.logo-container img {
+  height: 100px; /* adjust as needed */
+  width: auto; /* maintains aspect ratio */
+  object-fit: contain;
+}
+
+/* Center align them if needed */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 240px; /* space between logos */
+  flex-wrap: wrap; /* allows responsiveness */
+  margin-bottom: 24px;
+}
 
 .nav-menu {
   display: flex;
