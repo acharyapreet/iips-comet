@@ -821,25 +821,26 @@ button:focus {
     left: 50%;
     transform: translateX(-50%);
   }
-  /* --- Hero Section --- */
-  .hero {
-    padding: 120px 0 60px;
-  }
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-  .logos-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .logo-img {
-    max-width: 80px;
-  }
-  .hero-stats {
-    grid-template-columns: repeat(2, 1fr);
-  }
+ /* --- Hero Section --- */
+.hero {
+  padding: 120px 0 60px;
+}
+.hero h1 {
+  font-size: 2.2rem;
+}
+.hero-subtitle {
+  font-size: 1rem;
+}
+
+/* ADD THIS NEW CODE FOR THE ICON IN THE HEADING */
+.title-with-icon {
+  gap: 0.5rem; /* Reduce space between icon and text */
+}
+
+.heading-logo {
+  width: 40px;  /* Make the logo smaller */
+  height: 40px; /* Make the logo smaller */
+}
 
   /* --- About & University Sections --- */
   .about-grid,
