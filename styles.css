@@ -906,4 +906,15 @@ button:focus {
   .timeline-content {
     margin-left: 0;
   }
+  .table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .registration-table th, 
+  .registration-table td {
+      padding: 0.8rem 1rem; 
+      font-size: 0.9rem;     
+      white-space: nowrap; 
+  }
 }
