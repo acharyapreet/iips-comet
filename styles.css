@@ -823,14 +823,28 @@ button:focus {
   }
  /* --- Hero Section --- */
 .hero {
-  padding: 120px 0 60px;
-}
-.hero h1 {
-  font-size: 2.2rem;
-}
-.hero-subtitle {
-  font-size: 1rem;
-}
+    padding: 120px 0 60px;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .logos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .logo-container {
+    gap: 1.5rem; 
+    flex-wrap: nowrap; 
+
+  .logo-img {
+    max-width: 80px;
+  }
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
 /* ADD THIS NEW CODE FOR THE ICON IN THE HEADING */
 .title-with-icon {
