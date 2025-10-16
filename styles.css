@@ -1,5 +1,5 @@
 /* ====================================================== */
-/* FINAL CORRECTED STYLES - styles.css           */
+/* FINAL CORRECTED STYLES - styles.css                  */
 /* ====================================================== */
 
 * {
@@ -348,7 +348,7 @@ nav {
   border-radius: 15px;
   text-align: center;
 }
-#about .info-box p{
+#about .info-box p {
   color: #fff;
 }
 
@@ -589,10 +589,7 @@ nav {
   background: var(--background-color);
 }
 
-/* ====================================================== */
-/* STYLES FOR THE ENHANCED REGISTRATION TABLE             */
-/* ====================================================== */
-
+/* STYLES FOR THE ENHANCED REGISTRATION TABLE */
 .registration-table {
   background: var(--white);
   border-radius: 15px; /* Rounded corners for the container */
@@ -758,6 +755,20 @@ button:focus {
   outline-offset: 2px;
 }
 
+/* Heading with icon styles */
+.title-with-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.heading-logo {
+  width: 50px;
+  height: 50px;
+}
+
+
 /* ================================================= */
 /* === FINAL RESPONSIVE STYLES (Mobile View) === */
 /* ================================================= */
@@ -821,8 +832,8 @@ button:focus {
     left: 50%;
     transform: translateX(-50%);
   }
- /* --- Hero Section --- */
-.hero {
+  /* --- Hero Section --- */
+  .hero {
     padding: 120px 0 60px;
   }
   .hero h1 {
@@ -834,27 +845,32 @@ button:focus {
   .logos-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-
+  
+  /* CORRECTED LOGO STYLES FOR MOBILE */
   .logo-container {
-    gap: 1.5rem; 
-    flex-wrap: nowrap; 
+    justify-content: space-around;
+    gap: 1rem;
+    flex-wrap: nowrap;
+  }
 
   .logo-img {
     max-width: 80px;
+    height: 60px;
   }
+  
   .hero-stats {
     grid-template-columns: repeat(2, 1fr);
   }
 
-/* ADD THIS NEW CODE FOR THE ICON IN THE HEADING */
-.title-with-icon {
-  gap: 0.5rem; /* Reduce space between icon and text */
-}
+  /* Heading with icon styles for mobile */
+  .title-with-icon {
+    gap: 0.5rem;
+  }
 
-.heading-logo {
-  width: 40px;  /* Make the logo smaller */
-  height: 40px; /* Make the logo smaller */
-}
+  .heading-logo {
+    width: 40px;
+    height: 40px;
+  }
 
   /* --- About & University Sections --- */
   .about-grid,
@@ -890,5 +906,4 @@ button:focus {
   .timeline-content {
     margin-left: 0;
   }
-}
 }
