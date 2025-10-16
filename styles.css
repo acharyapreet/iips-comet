@@ -119,12 +119,13 @@ nav {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(
+  /* background: linear-gradient(
     135deg,
     var(--primary-color) 0%,
     var(--secondary-color) 100%
-  );
-  color: var(--white);
+  ); */
+  background-color: white;
+  color: var(--primary-color);
   padding: 150px 0 100px;
   text-align: center;
   position: relative;
@@ -152,18 +153,18 @@ nav {
   font-size: 3.5rem;
   margin-bottom: 1rem;
   font-weight: 700;
-  color: #f3f4f3;
+  color: var(--primary-color);
 }
 
 .hero-year {
-  color: #f39c12;
+  color: #f59e0b;
   font-size: 2rem;
   font-weight: bold;
 }
 
 .hero-subtitle {
   font-size: 1.3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   opacity: 0.9;
 }
 
@@ -192,7 +193,7 @@ nav {
 }
 
 .stat-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(238, 238, 249, 0.9);
   padding: 1.5rem;
   border-radius: 15px;
   backdrop-filter: blur(10px);
