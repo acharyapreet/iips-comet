@@ -191,8 +191,8 @@ nav {
 
 /* Main Section Titles */
 .section-title {
-  display: table; 
-  margin: 0 auto 4rem auto; 
+  display: table;
+  margin: 0 auto 4rem auto;
   font-size: 2rem;
   font-weight: 700;
   color: var(--primary-color);
@@ -217,7 +217,7 @@ nav {
 
 #about h3,
 #about .section-subtitle {
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Smaller Font Size */
   color: var(--primary-color);
   font-weight: 600;
   margin-bottom: 1.5rem;
@@ -226,7 +226,7 @@ nav {
 
 #about .section-subtitle {
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.8rem; /* Smaller Font Size */
   margin-top: 4rem;
 }
 
@@ -300,7 +300,6 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: background-color 0.3s ease;
 }
 #about .accordion-header:hover {
   background-color: var(--secondary-color);
@@ -758,11 +757,25 @@ button:focus {
     padding: 0 15px;
   }
 
-  /* --- Section Titles --- */
+  /* --- Main Section Titles (Reverted to your original style) --- */
   .section-title {
-    font-size: 2rem;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    position: relative;
   }
 
+  .section-title::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: var(--accent-color);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
   /* --- Hero Section --- */
   .hero {
     padding: 120px 0 60px;
