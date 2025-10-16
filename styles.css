@@ -163,6 +163,17 @@ nav {
   opacity: 0.9;
 }
 
+/* Style for the new theme/tagline in the hero section */
+.hero-theme {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--primary-color);
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
 .logos-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -835,6 +846,11 @@ button:focus {
   }
   .hero-subtitle {
     font-size: 1rem;
+  }
+  /* Make the new theme/tagline smaller on mobile */
+  .hero-theme {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
   }
   .logos-grid {
     grid-template-columns: repeat(3, 1fr);
