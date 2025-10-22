@@ -1,5 +1,5 @@
 /* ====================================================== */
-/* FINAL CORRECTED STYLES - styles.css           */
+/* FINAL CORRECTED STYLES - styles.css                  */
 /* ====================================================== */
 
 * {
@@ -160,6 +160,17 @@ nav {
 .hero-subtitle {
   font-size: 1.3rem;
   margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+/* Style for the new theme/tagline in the hero section */
+.hero-theme {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--primary-color);
+  margin-top: 1rem;
+  margin-bottom: 2rem;
   opacity: 0.9;
 }
 
@@ -348,7 +359,7 @@ nav {
   border-radius: 15px;
   text-align: center;
 }
-#about .info-box p{
+#about .info-box p {
   color: #fff;
 }
 
@@ -589,29 +600,55 @@ nav {
   background: var(--background-color);
 }
 
+/* STYLES FOR THE ENHANCED REGISTRATION TABLE */
 .registration-table {
   background: var(--white);
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 15px; /* Rounded corners for the container */
+  overflow: hidden; /* Ensures the header corners are rounded */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* A soft shadow */
+  padding: 2rem; /* Adds space inside the card */
   margin-top: 2rem;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
+.registration-table h3 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
 }
 
-th {
-  background: var(--primary-color);
-  color: var(--white);
-  padding: 1rem;
+.registration-table table {
+  width: 100%;
+  border-collapse: collapse; /* Removes gaps between cells */
+}
+
+/* Styling the table header (thead) */
+.registration-table th {
+  background-color: var(--primary-color); /* Dark blue background */
+  color: var(--white); /* White text */
+  font-weight: 600;
+  padding: 1rem 1.5rem;
   text-align: left;
 }
 
-td {
-  padding: 1rem;
-  border-bottom: 1px solid var(--light-gray);
+/* Styling the table cells (tbody) */
+.registration-table td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--light-gray); /* Separator line between rows */
+  color: #333;
+}
+
+/* Removes the bottom border from the last row for a cleaner look */
+.registration-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Styling for the notes below the table */
+.registration-table p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: left;
 }
 
 tr:hover {
@@ -729,6 +766,20 @@ button:focus {
   outline-offset: 2px;
 }
 
+/* Heading with icon styles */
+.title-with-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.heading-logo {
+  width: 50px;
+  height: 50px;
+}
+
+
 /* ================================================= */
 /* === FINAL RESPONSIVE STYLES (Mobile View) === */
 /* ================================================= */
@@ -778,16 +829,10 @@ button:focus {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: var(--primary-color);
-    position: relative;
   }
-
   .section-title::after {
-    content: "";
     width: 80px;
     height: 4px;
-    background: var(--accent-color);
-    position: absolute;
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
@@ -802,14 +847,39 @@ button:focus {
   .hero-subtitle {
     font-size: 1rem;
   }
+  /* Make the new theme/tagline smaller on mobile */
+  .hero-theme {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
   .logos-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+  
+  /* CORRECTED LOGO STYLES FOR MOBILE */
+  .logo-container {
+    justify-content: space-around;
+    gap: 1rem;
+    flex-wrap: nowrap;
+  }
+
   .logo-img {
     max-width: 80px;
+    height: 60px;
   }
+  
   .hero-stats {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Heading with icon styles for mobile */
+  .title-with-icon {
+    gap: 0.5rem;
+  }
+
+  .heading-logo {
+    width: 40px;
+    height: 40px;
   }
 
   /* --- About & University Sections --- */
@@ -845,5 +915,18 @@ button:focus {
   }
   .timeline-content {
     margin-left: 0;
+  }
+
+  /* === MOBILE STYLES FOR REGISTRATION TABLE === */
+  .table-container {
+    overflow-x: auto; /* Adds the horizontal scrollbar */
+    -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+  }
+
+  .registration-table th,
+  .registration-table td {
+      font-size: 0.9rem;
+      white-space: nowrap; /* Prevents text from wrapping to the next line */
+      padding: 0.8rem 1rem;
   }
 }
