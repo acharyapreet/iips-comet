@@ -858,9 +858,9 @@ button:focus {
   
   /* CORRECTED LOGO STYLES FOR MOBILE */
   .logo-container {
-    justify-content: space-around;
-    gap: 1rem;
-    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
   }
 
   .logo-img {
