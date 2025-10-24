@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conference Committee - IIPS-CoMET 2026</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary-color: #1e3a8a;
+        --secondary-color: #3b82f6;
+        --accent-color: #f59e0b;
+        --background-color: #f8f9fa;
+        --text-color: #1f2937;
+        --light-gray: #e5e7eb;
+        --white: #ffffff;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--background-color);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        background: var(--white);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem 0;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: var(--primary-color);
+      }
+
+      .back-button {
+        background: var(--accent-color);
+        color: var(--white);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.3s, transform 0.2s;
+        display: inline-block;
+      }
+
+      .back-button:hover {
+        background: #e55a2b;
+        transform: translateY(-2px);
+      }
+
+      .committee-section {
+        padding: 60px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        position: relative;
+        padding-bottom: 1.5rem;
+      }
+
+      .section-title::after {
+        content: "";
+        width: 100px;
+        height: 5px;
+        background: var(--accent-color);
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .section-subtitle {
+        text-align: center;
+        font-size: 1.8rem;
+        color: var(--primary-color);
+        margin: 3rem 0 2rem;
+        font-weight: 600;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .committee-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .committee-card {
+        background: var(--white);
+        padding: 2rem;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s, box-shadow 0.3s;
+        border-left: 4px solid var(--accent-color);
+      }
+
+      .committee-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .committee-photo {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        margin: 0 auto 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+        font-size: 1.8rem;
+        font-weight: bold;
+      }
+
+      .committee-card h4 {
+        font-size: 1.2rem;
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+
+      .committee-card p {
+        color: var(--text-color);
+        margin-bottom: 0.3rem;
+        font-size: 0.95rem;
+      }
+
+      .committee-card small {
+        color: var(--accent-color);
+        font-weight: 600;
+        font-size: 0.85rem;
+        display: block;
+        margin-top: 0.5rem;
+      }
+
+      footer {
+        background: var(--primary-color);
+        color: var(--white);
+        padding: 2rem 0;
+        margin-top: 4rem;
+        text-align: center;
+      }
+
+      .honorary-section {
+        background: linear-gradient(
+          135deg,
+          rgba(30, 58, 138, 0.05),
+          rgba(59, 130, 246, 0.05)
+        );
+        padding: 2rem;
+        border-radius: 15px;
+        margin-bottom: 3rem;
+      }
+
+      @media (max-width: 768px) {
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .section-subtitle {
+          font-size: 1.5rem;
+        }
+
+        .committee-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .header-content {
+          flex-direction: column;
+          gap: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            IIPS-CoMET <span style="color: #f39c12">2026</span>
+          </div>
+          <a href="index.html" class="back-button">← Back to Home</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="committee-section">
+      <div class="container">
+        <h1 class="section-title">Conference Committee</h1>
+
+        <!-- Honorary Chair -->
+        <div class="honorary-section">
+          <h2 class="section-subtitle">Honorary Chair</h2>
+          <div class="committee-grid">
+            <div class="committee-card">
+              <div class="committee-photo">RS</div>
+              <h4>Prof. Rakesh Singhai</h4>
+              <p>Hon'ble Vice Chancellor, DAVV</p>
+              <small>Patron</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- General Chairs -->
+        <h2 class="section-subtitle">General Chairs</h2>
+        <div class="committee-grid">
+          <div class="committee-card">
+            <div class="committee-photo">YK</div>
+            <h4>Dr. Yamini Karmarkar</h4>
+            <p>Director, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">GT</div>
+            <h4>Dr. G. S. Tomar</h4>
+            <p>Head IEEE MP Section</p>
+          </div>
+        </div>
+
+        <!-- General Co-Chairs -->
+        <h2 class="section-subtitle">General Co-Chairs</h2>
+        <div class="committee-grid">
+          <div class="committee-card">
+            <div class="committee-photo">KJ</div>
+            <h4>Dr. Kapil Jain</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">YS</div>
+            <h4>Dr. Yasmin Shaikh</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">BG</div>
+            <h4>Dr. Bhumika Gupta</h4>
+            <p>Associate Professor, IMT, France</p>
+          </div>
+        </div>
+
+        <!-- Program Co-Chairs -->
+        <h2 class="section-subtitle">Program Co-Chairs</h2>
+        <div class="committee-grid">
+          <div class="committee-card">
+            <div class="committee-photo">SP</div>
+            <h4>Dr. Shaligram Prajapat</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">SM</div>
+            <h4>Dr. Surendra Malviya</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">MK</div>
+            <h4>Dr. Muskan Karamchandani</h4>
+            <p>Associate Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">VS</div>
+            <h4>Dr. Vivek Shrivastava</h4>
+            <p>Associate Professor, IIPS, DAVV</p>
+          </div>
+        </div>
+
+        <!-- Finance Co-Chairs -->
+        <h2 class="section-subtitle">Finance Co-Chairs</h2>
+        <div class="committee-grid">
+          <div class="committee-card">
+            <div class="committee-photo">RT</div>
+            <h4>Dr. Ramesh Thakur</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">RY</div>
+            <h4>Dr. Ravindra Yadav</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">YB</div>
+            <h4>Mr. Y. S. Bawal</h4>
+            <p>Administrative Officer, IIPS, DAVV</p>
+          </div>
+        </div>
+
+        <!-- Publicity Co-Chairs -->
+        <h2 class="section-subtitle">Publicity Co-Chairs</h2>
+        <div class="committee-grid">
+          <div class="committee-card">
+            <div class="committee-photo">SP</div>
+            <h4>Dr. Sujata Parwani</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">AB</div>
+            <h4>Dr. Anshu Bhati</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">PJ</div>
+            <h4>Dr. Pooja Jain</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">PM</div>
+            <h4>Dr. Poonam Mangwani</h4>
+            <p>Associate Professor, IIPS, DAVV</p>
+          </div>
+        </div>
+
+        <!-- Publication Co-Chairs -->
+        <h2 class="section-subtitle">Publication Co-Chairs</h2>
+        <div class="committee-grid">
+          <div class="committee-card">
+            <div class="committee-photo">KJ</div>
+            <h4>Dr. Kapil Jain</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">YS</div>
+            <h4>Dr. Yasmin Shaikh</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">SM</div>
+            <h4>Dr. Surendra Malviya</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">VS</div>
+            <h4>Dr. Vivek Shrivastava</h4>
+            <p>Associate Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">MS</div>
+            <h4>Dr. Manju Suchdeo</h4>
+            <p>Associate Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">BN</div>
+            <h4>Dr. Basant Namdeo</h4>
+            <p>Associate Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">NS</div>
+            <h4>Dr. Nirmala Sawan</h4>
+            <p>Associate Professor, IIPS, DAVV</p>
+          </div>
+        </div>
+
+        <!-- Competition Co-Chairs -->
+        <h2 class="section-subtitle">Competition Co-Chairs</h2>
+        <div class="committee-grid">
+          <div class="committee-card">
+            <div class="committee-photo">MS</div>
+            <h4>Dr. Manminder Singh Saluja</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">SB</div>
+            <h4>Dr. Shilpa Bagdare</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">SS</div>
+            <h4>Ms. Shraddha Soni</h4>
+            <p>Associate Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">JJ</div>
+            <h4>Dr. Jyoti Jain</h4>
+            <p>Assistant Professor, IIPS, DAVV</p>
+          </div>
+        </div>
+
+        <!-- Local Arrangement Co-Chairs -->
+        <h2 class="section-subtitle">Local Arrangement Co-Chairs</h2>
+        <div class="committee-grid">
+          <div class="committee-card">
+            <div class="committee-photo">RS</div>
+            <h4>Dr. Rahul Singhai</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">GP</div>
+            <h4>Dr. Gaurav Purohit</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">NN</div>
+            <h4>Dr. Nitin Nagar</h4>
+            <p>Associate Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">RB</div>
+            <h4>Dr. Ravi Bunkar</h4>
+            <p>Assistant Professor, IIPS, DAVV</p>
+          </div>
+        </div>
+
+        <!-- Registration Co-Chairs -->
+        <h2 class="section-subtitle">Registration Co-Chairs</h2>
+        <div class="committee-grid">
+          <div class="committee-card">
+            <div class="committee-photo">GN</div>
+            <h4>Dr. Geeta Nema</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">NS</div>
+            <h4>Dr. Nirmala Sawan</h4>
+            <p>Associate Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">KV</div>
+            <h4>Ms. Kirti Vijayvergia</h4>
+            <p>Associate Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">PJ</div>
+            <h4>Dr. Pradeep Jatav</h4>
+            <p>Associate Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">MK</div>
+            <h4>Dr. Monalisa Khatre</h4>
+            <p>Assistant Professor, IIPS, DAVV</p>
+          </div>
+        </div>
+
+        <!-- Technical Co-Chairs -->
+        <h2 class="section-subtitle">Technical Co-Chairs</h2>
+        <div class="committee-grid">
+          <div class="committee-card">
+            <div class="committee-photo">JD</div>
+            <h4>Dr. Jugendra Dongre</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">ND</div>
+            <h4>Dr. Naresh Dembla</h4>
+            <p>Associate Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">RS</div>
+            <h4>Dr. Rupesh Sendre</h4>
+            <p>Associate Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">PJ</div>
+            <h4>Dr. Pradeep Jatav</h4>
+            <p>Assistant Professor, IIPS, DAVV</p>
+          </div>
+        </div>
+
+        <!-- Advisory Board -->
+        <h2 class="section-subtitle">Advisory Board</h2>
+        <div class="committee-grid">
+          <div class="committee-card">
+            <div class="committee-photo">BT</div>
+            <h4>Dr. B. K. Tripathi</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">GS</div>
+            <h4>Dr. Geeta Sharma</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">KM</div>
+            <h4>Dr. Kirti Mathur</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">GN</div>
+            <h4>Dr. Geeta Nema</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">JS</div>
+            <h4>Dr. Jyoti Sharma</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">MS</div>
+            <h4>Dr. Manish Sitlani</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">RT</div>
+            <h4>Dr. Ramesh Thakur</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">SC</div>
+            <h4>Dr. S. C. Patidar</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+          <div class="committee-card">
+            <div class="committee-photo">SP</div>
+            <h4>Dr. Shaligram Prajapat</h4>
+            <p>Professor, IIPS, DAVV</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2026 IIPS-CoMET Conference. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
