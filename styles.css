@@ -859,15 +859,15 @@ button:focus {
  /* FINAL SINGLE-LINE LOGO STYLES FOR MOBILE */
 .logo-container {
   display: flex;
-  justify-content: space-around; 
+  justify-content: space-between; /* space-around se 'between' try karein, isse corners me logos chipak jaate hain aur beech me space rehti hai */
   align-items: center;
-  flex-wrap: nowrap; 
-  gap: 1rem; 
+  flex-wrap: nowrap;
+  gap: 0.5rem; /* Beech ki space aur kam kar di */
 }
 
 .logo-img {
-  max-width: 65px;
-  height: auto;  
+  max-width: 50px; /* << Logo ka size aur chota kar diya */
+  height: auto;
   object-fit: contain;
 }
   
