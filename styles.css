@@ -100,7 +100,9 @@ nav {
   border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s, transform 0.2s;
+  transition:
+    background 0.3s,
+    transform 0.2s;
 }
 
 .cta-button:hover {
@@ -338,15 +340,52 @@ nav {
   max-height: 0;
   overflow: hidden;
   padding: 0 1.5rem;
-  transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+  transition:
+    max-height 0.4s ease-out,
+    padding 0.4s ease-out;
+  line-height: 1.7;
+  color: #555;
 }
+
+/* Intro paragraph above "Subthemes:" */
+#about .accordion-content > p:first-of-type {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+/* "Subthemes:" label */
+#about .accordion-content p strong {
+  color: var(--primary-color);
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
 #about .accordion-content ul {
   padding-left: 20px;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+  list-style: none;
 }
+
+/* Space + a subtle left border per subtheme for scannability */
+#about .accordion-content ul li {
+  margin-bottom: 1.1rem;
+  padding-left: 1rem;
+  border-left: 3px solid #eef0f5;
+}
+#about .accordion-content ul li:last-child {
+  margin-bottom: 1;
+}
+#about .accordion-content ul li strong {
+  display: block;
+  color: #1a1a1a;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
 .accordion-item.active .accordion-content {
   max-height: 1000px;
-  padding: 1.5rem;
+  padding: 1.75rem 1.5rem 1.75rem 1.75rem;
 }
 
 #about .info-box-container {
@@ -525,7 +564,9 @@ nav {
   padding: 2rem;
   text-align: center;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 .speaker-card:hover {
@@ -779,7 +820,6 @@ button:focus {
   height: 50px;
 }
 
-
 /* ================================================= */
 /* === FINAL RESPONSIVE STYLES (Mobile View) === */
 /* ================================================= */
@@ -855,22 +895,21 @@ button:focus {
   .logos-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  
- /* FINAL SINGLE-LINE LOGO STYLES FOR MOBILE */
-.logo-container {
-  display: flex;
-  justify-content: space-between; /* space-around se 'between' try karein, isse corners me logos chipak jaate hain aur beech me space rehti hai */
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 0.5rem; /* Beech ki space aur kam kar di */
-}
 
-.logo-img {
-  max-width: 50px; /* << Logo ka size aur chota kar diya */
-  height: auto;
-  object-fit: contain;
-}
-  
+  /* FINAL SINGLE-LINE LOGO STYLES FOR MOBILE */
+  .logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+
+  .logo-img {
+    max-width: 50px;
+    object-fit: contain;
+  }
+
   .hero-stats {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -928,9 +967,9 @@ button:focus {
 
   .registration-table th,
   .registration-table td {
-      font-size: 0.9rem;
-      white-space: nowrap; /* Prevents text from wrapping to the next line */
-      padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    padding: 0.8rem 1rem;
   }
 }
 
@@ -960,7 +999,9 @@ button:focus {
   background-color: #f7f8fc;
   border-radius: 999px;
   overflow: hidden;
-  transition: border-radius 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    border-radius 0.25s ease,
+    box-shadow 0.25s ease;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
@@ -1009,7 +1050,9 @@ button:focus {
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
+  transition:
+    max-height 0.3s ease,
+    padding 0.3s ease;
   padding: 0 1.75rem;
 }
 
@@ -1144,7 +1187,9 @@ button:focus {
   color: #1a1a2e;
   font-size: 1.4rem;
   z-index: 5;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .slider-arrow:hover {
@@ -1175,7 +1220,9 @@ button:focus {
   border: none;
   cursor: pointer;
   padding: 0;
-  transition: background 0.2s ease, width 0.2s ease;
+  transition:
+    background 0.2s ease,
+    width 0.2s ease;
 }
 
 .slider-dot.active {
@@ -1200,7 +1247,9 @@ button:focus {
   padding: 1.75rem 1.25rem;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .highlight-stat-card:hover {
@@ -1286,8 +1335,6 @@ button:focus {
     padding: 1.25rem 0.75rem;
   }
 }
-
-
 
 /* ===== Modern Navbar Override ===== */
 /* Keeps existing color theme (navy text + orange accent), just modernizes layout, spacing & interactions */
@@ -1382,7 +1429,9 @@ header .cta-button {
   text-decoration: none;
   white-space: nowrap;
   box-shadow: 0 4px 14px rgba(243, 156, 18, 0.35);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 header .cta-button:hover {
@@ -1477,4 +1526,268 @@ header .mobile-menu:hover {
   header .logo {
     font-size: 1.25rem;
   }
+}
+
+
+/* ====================================================== */
+/* CONFERENCE VENUE SECTION                               */
+/* ====================================================== */
+
+.venue-section {
+  padding: 80px 0;
+  background-color: #fdfdfd; /* Slight off-white to differentiate from sections */
+}
+
+.venue-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Left Side Info */
+.venue-title {
+  font-size: 2rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  padding-left: 1rem;
+  border-left: 5px solid var(--accent-color);
+  line-height: 1.2;
+}
+
+.venue-detail {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.venue-icon {
+  flex-shrink: 0;
+  width: 45px;
+  height: 45px;
+  background-color: rgba(245, 158, 11, 0.15); /* Light orange background */
+  color: var(--accent-color);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.venue-text h3 {
+  font-size: 1.15rem;
+  color: var(--primary-color);
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+
+.venue-text p {
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.venue-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--accent-color); /* Solid orange by default */
+  color: #ffffff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3); /* Subtle drop shadow */
+}
+
+.venue-btn:hover {
+  transform: translateY(-2px);
+  /* The inset white shadow gives the shiny inner edge, while the outer shadow creates a glow */
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.7), 
+              inset 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Right Side Map Container */
+.venue-map-container {
+  width: 100%;
+  height: 400px;
+  background-color: #f1f2f6;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.venue-map-container iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+  .venue-grid {
+    grid-template-columns: 1fr; /* Stacks the text and map on top of each other */
+    gap: 3rem;
+  }
+  
+  .venue-title {
+    font-size: 1.75rem;
+  }
+  
+  .venue-map-container {
+    height: 350px;
+  }
+}
+/* .patrons-list {
+    text-align: center;
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 700px;
+}
+
+.patrons-list h3 {
+    color: #1f3c88;
+    margin-bottom: 20px;
+}
+
+.patrons-list p {
+    margin: 15px 0;
+    line-height: 1.8;
+} */
+ .committee-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.committee-title {
+    color: #2c4ea2;
+    font-size: 42px;
+    margin-bottom: 40px;
+}
+
+.committee-card {
+    max-width: 700px;
+    margin: auto;
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid orange;
+}
+
+.member-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #3562cc;
+    color: white;
+    font-size: 52px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 25px;
+}
+
+.committee-card h3 {
+    color: #1e3f95;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+.committee-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.single-card .committee-card {
+    max-width: 420px;
+}
+.committee-card {
+    width: 280px;
+    min-height: 320px;
+
+    padding: 25px 20px;
+
+    background: #fff;
+
+    border-radius: 18px;
+
+    border-left: 4px solid orange;
+
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+
+    text-align: center;
+
+    transition: 0.3s ease;
+}
+
+.committee-card:hover {
+    transform: translateY(-5px);
+}
+
+.member-avatar {
+    width: 85px;
+    height: 85px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    font-size: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.member-name {
+    font-size: 26px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+
+    margin-bottom: 15px;
+
+    color: #2f55b5;
+}
+
+.member-designation {
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    margin-bottom: 12px;
+
+    color: #444;
+}
+
+.member-role {
+    font-size: 18px;
+
+    font-weight: 700;
+
+    color: orange;
+}
+
+.committee-title {
+    text-align: center;
+
+    color: #2f55b5;
+
+    font-size: 48px;
+
+    margin-bottom: 40px;
 }
