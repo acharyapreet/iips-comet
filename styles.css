@@ -1716,9 +1716,9 @@ header .mobile-menu:hover {
 }
 
 .committee-card {
-    width: 100px; /* smaller box */
+    width: 350px; 
 
-    padding: 25px 20px;
+    padding: 35px 30px;
 
     background: #fff;
 
@@ -1731,7 +1731,7 @@ header .mobile-menu:hover {
     text-align: center;
 }
 .member-avatar {
-    width: 80px;
+    width: 100px;
     height: 80px;
 
     font-size: 32px;
