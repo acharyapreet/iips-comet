@@ -1527,3 +1527,124 @@ header .mobile-menu:hover {
     font-size: 1.25rem;
   }
 }
+
+
+/* ====================================================== */
+/* CONFERENCE VENUE SECTION                               */
+/* ====================================================== */
+
+.venue-section {
+  padding: 80px 0;
+  background-color: #fdfdfd; /* Slight off-white to differentiate from sections */
+}
+
+.venue-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Left Side Info */
+.venue-title {
+  font-size: 2rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  padding-left: 1rem;
+  border-left: 5px solid var(--accent-color);
+  line-height: 1.2;
+}
+
+.venue-detail {
+  display: flex;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.venue-icon {
+  flex-shrink: 0;
+  width: 45px;
+  height: 45px;
+  background-color: rgba(245, 158, 11, 0.15); /* Light orange background */
+  color: var(--accent-color);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.venue-text h3 {
+  font-size: 1.15rem;
+  color: var(--primary-color);
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+
+.venue-text p {
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.venue-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--accent-color); /* Solid orange by default */
+  color: #ffffff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3); /* Subtle drop shadow */
+}
+
+.venue-btn:hover {
+  transform: translateY(-2px);
+  /* The inset white shadow gives the shiny inner edge, while the outer shadow creates a glow */
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.7), 
+              inset 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Right Side Map Container */
+.venue-map-container {
+  width: 100%;
+  height: 400px;
+  background-color: #f1f2f6;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.venue-map-container iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+  .venue-grid {
+    grid-template-columns: 1fr; /* Stacks the text and map on top of each other */
+    gap: 3rem;
+  }
+  
+  .venue-title {
+    font-size: 1.75rem;
+  }
+  
+  .venue-map-container {
+    height: 350px;
+  }
+}
