@@ -100,7 +100,9 @@ nav {
   border-radius: 25px;
   text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s, transform 0.2s;
+  transition:
+    background 0.3s,
+    transform 0.2s;
 }
 
 .cta-button:hover {
@@ -338,15 +340,52 @@ nav {
   max-height: 0;
   overflow: hidden;
   padding: 0 1.5rem;
-  transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+  transition:
+    max-height 0.4s ease-out,
+    padding 0.4s ease-out;
+  line-height: 1.7;
+  color: #555;
 }
+
+/* Intro paragraph above "Subthemes:" */
+#about .accordion-content > p:first-of-type {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+/* "Subthemes:" label */
+#about .accordion-content p strong {
+  color: var(--primary-color);
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+}
+
 #about .accordion-content ul {
   padding-left: 20px;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+  list-style: none;
 }
+
+/* Space + a subtle left border per subtheme for scannability */
+#about .accordion-content ul li {
+  margin-bottom: 1.1rem;
+  padding-left: 1rem;
+  border-left: 3px solid #eef0f5;
+}
+#about .accordion-content ul li:last-child {
+  margin-bottom: 1;
+}
+#about .accordion-content ul li strong {
+  display: block;
+  color: #1a1a1a;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
 .accordion-item.active .accordion-content {
   max-height: 1000px;
-  padding: 1.5rem;
+  padding: 1.75rem 1.5rem 1.75rem 1.75rem;
 }
 
 #about .info-box-container {
@@ -525,7 +564,9 @@ nav {
   padding: 2rem;
   text-align: center;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 .speaker-card:hover {
@@ -779,7 +820,6 @@ button:focus {
   height: 50px;
 }
 
-
 /* ================================================= */
 /* === FINAL RESPONSIVE STYLES (Mobile View) === */
 /* ================================================= */
@@ -855,22 +895,21 @@ button:focus {
   .logos-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-  
- /* FINAL SINGLE-LINE LOGO STYLES FOR MOBILE */
-.logo-container {
-  display: flex;
-  justify-content: space-between; /* space-around se 'between' try karein, isse corners me logos chipak jaate hain aur beech me space rehti hai */
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 0.5rem; /* Beech ki space aur kam kar di */
-}
 
-.logo-img {
-  max-width: 50px; /* << Logo ka size aur chota kar diya */
-  height: auto;
-  object-fit: contain;
-}
-  
+  /* FINAL SINGLE-LINE LOGO STYLES FOR MOBILE */
+  .logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+
+  .logo-img {
+    max-width: 50px;
+    object-fit: contain;
+  }
+
   .hero-stats {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -928,8 +967,8 @@ button:focus {
 
   .registration-table th,
   .registration-table td {
-      font-size: 0.9rem;
-      white-space: nowrap; /* Prevents text from wrapping to the next line */
-      padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+    padding: 0.8rem 1rem;
   }
 }
