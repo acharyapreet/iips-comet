@@ -110,14 +110,14 @@ nav {
   transform: translateY(-2px);
 }
 
-.mobile-menu {
+/* .mobile-menu {
   display: none;
   background: none;
   border: none;
   font-size: 1.5rem;
   color: var(--primary-color);
   cursor: pointer;
-}
+} */
 
 /* Hero Section */
 .hero {
@@ -825,7 +825,7 @@ button:focus {
 /* ================================================= */
 @media (max-width: 768px) {
   /* --- Mobile Navigation --- */
-  .nav-menu {
+  /*.nav-menu {
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -854,7 +854,7 @@ button:focus {
   .mobile-menu {
     display: block;
     z-index: 1001;
-  }
+  }*/
 
   /* --- General Layout --- */
   section {
@@ -1528,7 +1528,6 @@ header .mobile-menu:hover {
   }
 }
 
-
 /* ====================================================== */
 /* CONFERENCE VENUE SECTION                               */
 /* ====================================================== */
@@ -1609,8 +1608,9 @@ header .mobile-menu:hover {
 .venue-btn:hover {
   transform: translateY(-2px);
   /* The inset white shadow gives the shiny inner edge, while the outer shadow creates a glow */
-  box-shadow: 0 0 15px rgba(245, 158, 11, 0.7), 
-              inset 0 0 10px rgba(255, 255, 255, 0.6);
+  box-shadow:
+    0 0 15px rgba(245, 158, 11, 0.7),
+    inset 0 0 10px rgba(255, 255, 255, 0.6);
 }
 
 /* Right Side Map Container */
@@ -1621,7 +1621,7 @@ header .mobile-menu:hover {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   position: relative;
 }
 
@@ -1639,11 +1639,11 @@ header .mobile-menu:hover {
     grid-template-columns: 1fr; /* Stacks the text and map on top of each other */
     gap: 3rem;
   }
-  
+
   .venue-title {
     font-size: 1.75rem;
   }
-  
+
   .venue-map-container {
     height: 350px;
   }
@@ -1664,130 +1664,130 @@ header .mobile-menu:hover {
     margin: 15px 0;
     line-height: 1.8;
 } */
- .committee-section {
-    text-align: center;
-    padding: 50px 20px;
+.committee-section {
+  text-align: center;
+  padding: 50px 20px;
 }
 
 .committee-title {
-    color: #2c4ea2;
-    font-size: 42px;
-    margin-bottom: 40px;
+  color: #2c4ea2;
+  font-size: 42px;
+  margin-bottom: 40px;
 }
 
 .committee-card {
-    max-width: 700px;
-    margin: auto;
-    background: #ffffff;
-    padding: 50px;
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border-left: 5px solid orange;
+  max-width: 700px;
+  margin: auto;
+  background: #ffffff;
+  padding: 50px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid orange;
 }
 
 .member-avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: #3562cc;
-    color: white;
-    font-size: 52px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 25px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #3562cc;
+  color: white;
+  font-size: 52px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 25px;
 }
 
 .committee-card h3 {
-    color: #1e3f95;
-    font-size: 36px;
-    margin-bottom: 15px;
+  color: #1e3f95;
+  font-size: 36px;
+  margin-bottom: 15px;
 }
 .committee-grid {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
 .single-card .committee-card {
-    max-width: 420px;
+  max-width: 420px;
 }
 .committee-card {
-    width: 280px;
-    min-height: 320px;
+  width: 280px;
+  min-height: 320px;
 
-    padding: 25px 20px;
+  padding: 25px 20px;
 
-    background: #fff;
+  background: #fff;
 
-    border-radius: 18px;
+  border-radius: 18px;
 
-    border-left: 4px solid orange;
+  border-left: 4px solid orange;
 
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
 
-    text-align: center;
+  text-align: center;
 
-    transition: 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .committee-card:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .member-avatar {
-    width: 85px;
-    height: 85px;
+  width: 85px;
+  height: 85px;
 
-    margin: 0 auto 18px;
+  margin: 0 auto 18px;
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    font-size: 30px;
+  font-size: 30px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .member-name {
-    font-size: 26px;
+  font-size: 26px;
 
-    font-weight: 700;
+  font-weight: 700;
 
-    line-height: 1.3;
+  line-height: 1.3;
 
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 
-    color: #2f55b5;
+  color: #2f55b5;
 }
 
 .member-designation {
-    font-size: 16px;
+  font-size: 16px;
 
-    line-height: 1.5;
+  line-height: 1.5;
 
-    margin-bottom: 12px;
+  margin-bottom: 12px;
 
-    color: #444;
+  color: #444;
 }
 
 .member-role {
-    font-size: 18px;
+  font-size: 18px;
 
-    font-weight: 700;
+  font-weight: 700;
 
-    color: orange;
+  color: orange;
 }
 
 .committee-title {
-    text-align: center;
+  text-align: center;
 
-    color: #2f55b5;
+  color: #2f55b5;
 
-    font-size: 48px;
+  font-size: 48px;
 
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }

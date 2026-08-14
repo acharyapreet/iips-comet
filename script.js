@@ -26,7 +26,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
           timeElapsed,
           startPosition,
           targetPosition,
-          duration
+          duration,
         );
         window.scrollTo(0, run);
         if (timeElapsed < duration) requestAnimationFrame(animation);
@@ -111,47 +111,47 @@ document.addEventListener("DOMContentLoaded", function () {
   if (mobileMenuButton && navMenu) {
     // Show/hide menu when hamburger icon is clicked
     mobileMenuButton.addEventListener("click", function () {
-      navMenu.classList.toggle("nav-menu--open");
+      navMenu.classList.toggle("open");
     });
   }
 
   // Close mobile menu when a link inside it is clicked
   document.querySelectorAll(".nav-menu a").forEach((link) => {
     link.addEventListener("click", function () {
-      if (navMenu.classList.contains("nav-menu--open")) {
-        navMenu.classList.remove("nav-menu--open");
+      if (navMenu.classList.contains("open")) {
+        navMenu.classList.remove("open");
       }
     });
   });
 });
- /* ====================================================== */
+/* ====================================================== */
 /* START: Accordion Functionality                       */
 /* ====================================================== */
-document.addEventListener("DOMContentLoaded", function() {
-    const accordionItems = document.querySelectorAll(".accordion-item");
+document.addEventListener("DOMContentLoaded", function () {
+  const accordionItems = document.querySelectorAll(".accordion-item");
 
-    accordionItems.forEach(item => {
-        const header = item.querySelector(".accordion-header");
-        const content = item.querySelector(".accordion-content");
+  accordionItems.forEach((item) => {
+    const header = item.querySelector(".accordion-header");
+    const content = item.querySelector(".accordion-content");
 
-        header.addEventListener("click", () => {
-            // Close other open accordions
-            accordionItems.forEach(otherItem => {
-                if (otherItem !== item && otherItem.classList.contains('active')) {
-                    otherItem.classList.remove('active');
-                    otherItem.querySelector('.accordion-content').style.maxHeight = null;
-                }
-            });
+    header.addEventListener("click", () => {
+      // Close other open accordions
+      accordionItems.forEach((otherItem) => {
+        if (otherItem !== item && otherItem.classList.contains("active")) {
+          otherItem.classList.remove("active");
+          otherItem.querySelector(".accordion-content").style.maxHeight = null;
+        }
+      });
 
-            // Toggle the clicked accordion
-            item.classList.toggle('active');
-            if (item.classList.contains('active')) {
-                content.style.maxHeight = content.scrollHeight + "px";
-            } else {
-                content.style.maxHeight = null;
-            }
-        });
+      // Toggle the clicked accordion
+      item.classList.toggle("active");
+      if (item.classList.contains("active")) {
+        content.style.maxHeight = content.scrollHeight + "px";
+      } else {
+        content.style.maxHeight = null;
+      }
     });
+  });
 });
 /* ====================================================== */
 /* END: Accordion Functionality                         */
