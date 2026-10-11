@@ -70,7 +70,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 240px; /* space between logos */
+  gap: 220px; /* space between logos */
   flex-wrap: wrap; /* allows responsiveness */
   margin-bottom: 24px;
 }
@@ -123,7 +123,7 @@ nav {
 .hero {
   background-color: white;
   color: var(--primary-color);
-  padding: 150px 0 100px;
+  padding: 100px 0 100px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -151,6 +151,13 @@ nav {
   margin-bottom: 1rem;
   font-weight: 700;
   color: var(--primary-color);
+}
+
+.hero-heading {
+  color: #f59e0b;
+  text-decoration: underline;
+  margin-top: 5px;
+  font-style: italic;
 }
 
 .hero-year {
