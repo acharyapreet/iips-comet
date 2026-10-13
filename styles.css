@@ -55,7 +55,7 @@ nav {
 
 .logo {
   font-size: 1.8rem;
-  font-weight: bold;
+  font-weight: var(--background-color);
   color: var(--primary-color);
 }
 /* Make all logos the same height */
@@ -65,14 +65,49 @@ nav {
   object-fit: contain;
 }
 
-/* Center align them if needed */
+/* Container holding all logos */
 .logo-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 24px;
+  padding: 20px 30px;
+  box-sizing: border-box;
+}
+
+/* Individual logo containers */
+.logo-item {
+  flex: 1 1 0;
+  min-width: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 220px; /* space between logos */
-  flex-wrap: wrap; /* allows responsiveness */
-  margin-bottom: 24px;
+}
+
+/* Logo images */
+.logo-item img {
+  width: 150px;
+  height: 120px;
+  object-fit: contain;
+}
+
+/* Responsive sizing */
+@media (max-width: 768px) {
+  .logos-container {
+    gap: 8px;
+    padding: 12px 8px;
+  }
+
+  .logo-item img {
+    width: 65px;
+    height: 65px;
+  }
 }
 
 .nav-menu {
