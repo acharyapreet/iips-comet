@@ -189,10 +189,10 @@ nav {
 }
 
 .hero-heading {
-  color: #f59e0b;
+  color: green;
   text-decoration: underline;
   margin-top: 5px;
-  font-style: italic;
+  font-style: bold;
 }
 
 .hero-year {
