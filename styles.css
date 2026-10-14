@@ -738,6 +738,12 @@ tr:hover {
   background: rgba(255, 107, 53, 0.1);
 }
 
+.registration-notes {
+  margin-top: 15px;
+  padding-left: 5px;
+  color: #1e3a8a;
+}
+
 /* Committee Section */
 .committee {
   padding: 80px 0;
