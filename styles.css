@@ -1459,7 +1459,7 @@ header .logo {
 header .nav-menu {
   display: flex;
   align-items: center;
-  gap: 2.1rem;
+  gap: 1.2rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1479,6 +1479,7 @@ header .nav-menu a {
   font-weight: 500;
   padding: 0.4rem 0.1rem;
   transition: color 0.2s ease;
+  white-space: nowrap;
 }
 
 header .nav-menu a::after {
