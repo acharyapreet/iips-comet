@@ -158,7 +158,7 @@ nav {
 .hero {
   background-color: white;
   color: var(--primary-color);
-  padding: 100px 0 100px;
+  padding: 75px 0 25px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -259,7 +259,7 @@ nav {
 /* Main Section Titles */
 .section-title {
   display: table;
-  margin: 0 auto 4rem auto;
+  margin: 0 auto 2.2rem auto;
   font-size: 2rem;
   font-weight: 700;
   color: var(--primary-color);
@@ -278,63 +278,75 @@ nav {
 }
 
 /* About Section */
-#about {
-  padding: 80px 0;
+#about,
+.about {
+  padding: 40px 0;
 }
 
 #about h3,
-#about .section-subtitle {
+#about .section-subtitle,
+.about h3,
+.about .section-subtitle {
   font-size: 1.5rem; /* Smaller Font Size */
   color: var(--primary-color);
   font-weight: 600;
   margin-bottom: 1.5rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
-#about .section-subtitle {
+#about .section-subtitle,
+.about .section-subtitle {
   text-align: center;
   font-size: 1.8rem; /* Smaller Font Size */
-  margin-top: 4rem;
+  margin-top: 2.5rem;
 }
 
-#about p {
+#about p,
+.about p {
   color: #4a5568;
   line-height: 1.8;
 }
 
-#about .about-grid {
-  gap: 3rem;
-  margin-bottom: 3rem;
+#about .about-grid,
+.about .about-grid {
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
-#about .feature-grid {
+#about .feature-grid,
+.about .feature-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
-#about .feature-box {
+#about .feature-box,
+.about .feature-box {
   background: #ffffff;
   padding: 2rem;
   border-radius: 15px;
   border-left: 5px solid var(--accent-color);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
-#about .feature-box h4 {
+#about .feature-box h4,
+.about .feature-box h4 {
   color: var(--primary-color);
   font-size: 1.3rem;
   margin-bottom: 1rem;
 }
-#about .feature-box ul {
+#about .feature-box ul,
+.about .feature-box ul {
   list-style-type: none;
   padding-left: 0;
 }
-#about .feature-box li {
+#about .feature-box li,
+.about .feature-box li {
   margin-bottom: 0.5rem;
   padding-left: 1.5rem;
   position: relative;
 }
-#about .feature-box li::before {
+#about .feature-box li::before,
+.about .feature-box li::before {
   content: "✔";
   color: var(--accent-color);
   position: absolute;
@@ -343,18 +355,29 @@ nav {
 }
 
 /* Accordion styles */
-#about .accordion-container {
+#about .accordion-container,
+.about .accordion-container,
+.accordion-container {
   max-width: 900px;
   margin: 0 auto;
 }
-#about .accordion-item {
+#about .accordion-item,
+.about .accordion-item,
+.accordion-item {
   background-color: #ffffff;
   border-radius: 10px;
   margin-bottom: 1rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
   overflow: hidden;
 }
-#about .accordion-header {
+#about .accordion-item:last-child,
+.about .accordion-item:last-child,
+.accordion-item:last-child {
+  margin-bottom: 0;
+}
+#about .accordion-header,
+.about .accordion-header,
+.accordion-header {
   width: 100%;
   background-color: var(--primary-color);
   color: var(--white);
@@ -368,17 +391,25 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
-#about .accordion-header:hover {
+#about .accordion-header:hover,
+.about .accordion-header:hover,
+.accordion-header:hover {
   background-color: var(--secondary-color);
 }
-#about .accordion-icon {
+#about .accordion-icon,
+.about .accordion-icon,
+.accordion-icon {
   font-size: 1.5rem;
   transition: transform 0.3s ease;
 }
-#about .accordion-item.active .accordion-icon {
+#about .accordion-item.active .accordion-icon,
+.about .accordion-item.active .accordion-icon,
+.accordion-item.active .accordion-icon {
   transform: rotate(45deg);
 }
-#about .accordion-content {
+#about .accordion-content,
+.about .accordion-content,
+.accordion-content {
   max-height: 0;
   overflow: hidden;
   padding: 0 1.5rem;
@@ -469,19 +500,22 @@ nav {
   margin-bottom: 0.5rem;
 }
 
-#about .final-info-grid {
+#about .final-info-grid,
+.about .final-info-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
-#about .info-card {
+#about .info-card,
+.about .info-card {
   background: #ffffff;
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
-#about .info-card h4 {
+#about .info-card h4,
+.about .info-card h4 {
   font-size: 1.3rem;
   color: var(--primary-color);
   margin-bottom: 1rem;
@@ -489,12 +523,16 @@ nav {
 
 /* University & Institute Section */
 .university {
-  padding: 80px 0;
+  padding: 40px 0;
   background: var(--white);
 }
 
 .institution-block {
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
+}
+
+.institution-block:last-child {
+  margin-bottom: 0;
 }
 
 .institution-content {
@@ -644,7 +682,7 @@ nav {
 
 /* Timeline Section */
 .timeline {
-  padding: 80px 0;
+  padding: 40px 0;
   background: var(--white);
 }
 
@@ -679,7 +717,7 @@ nav {
 
 /* Registration Section */
 .registration {
-  padding: 80px 0;
+  padding: 40px 0;
   background: var(--background-color);
 }
 
@@ -906,7 +944,7 @@ button:focus {
 
   /* --- General Layout --- */
   section {
-    padding: 60px 0;
+    padding: 35px 0;
   }
   .container {
     padding: 0 15px;
@@ -915,8 +953,8 @@ button:focus {
   /* --- Main Section Titles (Reverted to your original style) --- */
   .section-title {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
   }
   .section-title::after {
     width: 80px;
@@ -927,7 +965,7 @@ button:focus {
   }
   /* --- Hero Section --- */
   .hero {
-    padding: 120px 0 60px;
+    padding: 80px 0 25px;
   }
   .hero h1 {
     font-size: 2.2rem;
@@ -1023,7 +1061,7 @@ button:focus {
 
 /* ===== FAQ Section ===== */
 .faq {
-  padding: 5rem 1.5rem;
+  padding: 40px 1.5rem;
   background-color: #ffffff;
 }
 
@@ -1119,7 +1157,7 @@ button:focus {
 /* Responsive */
 @media (max-width: 768px) {
   .faq {
-    padding: 3.5rem 1rem;
+    padding: 2.5rem 1rem;
   }
 
   .faq .section-title {
@@ -1156,7 +1194,7 @@ button:focus {
 
 /* ===== Conference Highlights / Slider Section ===== */
 .highlights {
-  padding: 5rem 1.5rem;
+  padding: 40px 1.5rem;
   background-color: #ffffff;
 }
 
@@ -1168,7 +1206,7 @@ button:focus {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #f39c12;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.4rem;
 }
 
 .highlights .section-title {
@@ -1176,7 +1214,7 @@ button:focus {
   font-size: 1.5rem;
   color: #1e3a8a;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .highlights .highlights-subtitle {
@@ -1184,14 +1222,14 @@ button:focus {
   color: #6b7280;
   font-size: 1rem;
   max-width: 620px;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 2rem;
 }
 
 /* Slider */
 .slider {
   position: relative;
   max-width: 1100px;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 1.25rem;
 }
 
 .slider-track-wrapper {
@@ -1343,7 +1381,7 @@ button:focus {
 
 @media (max-width: 768px) {
   .highlights {
-    padding: 3.5rem 1rem;
+    padding: 2.5rem 1rem;
   }
 
   .highlights .section-title {
@@ -1581,7 +1619,7 @@ header .mobile-menu:hover {
 /* ====================================================== */
 
 .venue-section {
-  padding: 80px 0;
+  padding: 40px 0;
   background-color: #fdfdfd; /* Slight off-white to differentiate from sections */
 }
 
