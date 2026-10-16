@@ -1502,6 +1502,15 @@ header .nav-menu a:hover::after {
   width: 100%;
 }
 
+header .nav-menu a.active {
+  color: #f39c12;
+  font-weight: 600;
+}
+
+header .nav-menu a.active::after {
+  width: 100%;
+}
+
 /* CTA button */
 header .cta-button {
   display: inline-flex;
@@ -1576,7 +1585,7 @@ header .mobile-menu:hover {
   }
 
   header .nav-menu.open {
-    max-height: 400px;
+    max-height: 600px;
   }
 
   header .nav-menu li {
@@ -1587,6 +1596,12 @@ header .mobile-menu:hover {
     display: block;
     width: 100%;
     padding: 0.9rem 1.5rem;
+  }
+
+  header .nav-menu a.active {
+    color: #f39c12;
+    font-weight: 600;
+    background: rgba(243, 156, 18, 0.08);
   }
 
   header .nav-menu a::after {

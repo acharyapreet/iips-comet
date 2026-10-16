@@ -48,12 +48,14 @@ function scrollToTop() {
 // Show/hide back to top button
 window.addEventListener("scroll", function () {
   const backToTop = document.querySelector(".back-to-top");
-  if (window.pageYOffset > 300) {
-    // Agar page 300 pixels se zyada scroll hua hai, to button dikhao
-    backToTop.style.display = "block";
-  } else {
-    // Warna button ko छिपा do
-    backToTop.style.display = "none";
+  if (backToTop) {
+    if (window.pageYOffset > 300) {
+      // Agar page 300 pixels se zyada scroll hua hai, to button dikhao
+      backToTop.style.display = "block";
+    } else {
+      // Warna button ko छिपा do
+      backToTop.style.display = "none";
+    }
   }
 });
 
