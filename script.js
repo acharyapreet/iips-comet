@@ -156,3 +156,57 @@ document.addEventListener("DOMContentLoaded", function () {
 /* ====================================================== */
 /* END: Accordion Functionality                         */
 /* ====================================================== */
+
+/* ====================================================== */
+/* START: Simple Conference Countdown Timer              */
+/* ====================================================== */
+function initConferenceCountdown() {
+  const daysEl = document.getElementById("countdown-days");
+  const hoursEl = document.getElementById("countdown-hours");
+  const minutesEl = document.getElementById("countdown-minutes");
+  const secondsEl = document.getElementById("countdown-seconds");
+  const headingEl = document.getElementById("countdown-heading");
+
+  if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+
+  const targetTime = new Date("2027-03-19T09:00:00+05:30").getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetTime - now;
+
+    if (distance <= 0) {
+      daysEl.textContent = "00";
+      hoursEl.textContent = "00";
+      minutesEl.textContent = "00";
+      secondsEl.textContent = "00";
+      if (headingEl) {
+        headingEl.textContent = "Conference Has Arrived!";
+      }
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    daysEl.textContent = days < 10 ? "0" + days : String(days);
+    hoursEl.textContent = hours < 10 ? "0" + hours : String(hours);
+    minutesEl.textContent = minutes < 10 ? "0" + minutes : String(minutes);
+    secondsEl.textContent = seconds < 10 ? "0" + seconds : String(seconds);
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initConferenceCountdown);
+} else {
+  initConferenceCountdown();
+}
+/* ====================================================== */
+/* END: Simple Conference Countdown Timer                */
+/* ====================================================== */
+

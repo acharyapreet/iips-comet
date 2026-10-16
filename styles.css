@@ -256,6 +256,190 @@ nav {
   color: var(--accent-color);
 }
 
+/* ====================================================== */
+/* Conference Record Number Badge & Countdown Timer Panel */
+/* ====================================================== */
+.conference-record-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #f0f4ff;
+  border: 1px solid #bfdbfe;
+  padding: 6px 18px;
+  border-radius: 9999px;
+  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.conference-record-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+}
+
+.conference-record-badge .badge-tag {
+  background: #00629b; /* IEEE Brand Blue */
+  color: #ffffff;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Simple Compact Countdown Panel - Light Modern Theme */
+.countdown-panel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem auto 1.75rem auto;
+  width: 100%;
+  max-width: 640px;
+  padding: 0 15px;
+}
+
+.countdown-panel {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 22px 24px 18px 24px;
+  width: 100%;
+  border: 1px solid #dbeafe;
+  box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+  text-align: center;
+}
+
+.countdown-title {
+  color: #1e3a8a;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  letter-spacing: 0.3px;
+}
+
+.countdown-timer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  width: 100%;
+}
+
+.countdown-unit {
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+  border-radius: 12px;
+  padding: 14px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.22);
+  transition: transform 0.2s ease;
+  user-select: none;
+}
+
+.countdown-unit:hover {
+  transform: translateY(-2px);
+}
+
+.countdown-number {
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.countdown-label {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .countdown-panel-container {
+    margin: 1.25rem auto;
+    padding: 0 10px;
+  }
+  .countdown-panel {
+    padding: 16px 14px 14px 14px;
+    border-radius: 14px;
+  }
+  .countdown-title {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+  }
+  .countdown-timer {
+    gap: 8px;
+  }
+  .countdown-unit {
+    padding: 10px 4px;
+    border-radius: 8px;
+  }
+  .countdown-number {
+    font-size: 1.6rem;
+  }
+  .countdown-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.8px;
+  }
+}
+
+/* Hero Quick Important Dates Strip */
+.hero-quick-dates {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 1.25rem;
+}
+
+.quick-date-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e2e8f0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  color: #334155;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.quick-date-tag {
+  background: #f59e0b;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.quick-dates-link {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.quick-dates-link:hover {
+  color: var(--accent-color);
+  transform: translateX(3px);
+}
+
 /* Main Section Titles */
 .section-title {
   display: table;

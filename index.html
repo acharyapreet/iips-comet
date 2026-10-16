@@ -5,9 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>
-    IIPS-CoMET 2026 - Conference on Modern AI, Entrepreneurship & Technology
+    IIPS-CoMET 2027 - Conference on Modern AI, Entrepreneurship & Technology
   </title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=2" />
   <link rel="stylesheet" href="faq.css" />
   <link rel="stylesheet" href="highlights.css" />
   <link rel="stylesheet" href="css/committee.css" />
@@ -36,71 +36,136 @@
     </nav>
   </header>
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      IIPS-CoMET 2027 - Conference on Mordern AI, Entrepreneurship & Technology
-    </title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="faq.css" />
-    <link rel="stylesheet" href="highlights.css" />
-    <link rel="icon" type="image/jpg" href="iipsComet.jpg" />
-  </head>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <!-- ...existing code... -->
+      <div id="logos" class="logo-container">
 
-  <body>
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="container">
-        <!-- ...existing code... -->
-        <div id="logos" class="logo-container">
+        <img src="iipsLogo.jpg" alt="IIPS Logo" class="logo-img" />
+        <img src="IEEE.png" alt="IEEE-Logo" class="logo-img" />
+        <img src="iipsComet.jpg" alt="IIPS-CoMET Logo" class="logo-img" />
+        <img src="ANRF.jpeg" alt="anrf Logo" class="logo-img" />
+        <img src="davvLogo.jpg" alt="DAVV Logo" class="logo-img" />
 
-          <img src="iipsLogo.jpg" alt="IIPS Logo" class="logo-img" />
-          <img src="IEEE.png" alt="IEEE-Logo" class="logo-img" />
-          <img src="iipsComet.jpg" alt="IIPS-CoMET Logo" class="logo-img" />
-          <img src="ANRF.jpeg" alt="anrf Logo" class="logo-img" />
-          <img src="davvLogo.jpg" alt="DAVV Logo" class="logo-img" />
-
-
-
+      </div>
+      <br>
+      <!-- ...existing code... -->
+      <div class="hero-content fade-in">
+        <div class="conference-record-badge">
+          <span class="badge-tag">IEEE</span>
+          <span>Conference Record Number: <strong>73825</strong></span>
         </div>
-        <br>
-        <!-- ...existing code... -->
-        <div class="hero-content fade-in">
-          <h2 class="hero-heading">IEEE INTERNATIONAL CONFERENCE</h2>
 
-          <h1>IIPS-CoMET <span style="color: #f39c12">2027</span></h1>
-          <p class="hero-subtitle">
-            Integrating Interdisciplinary Perspectives and Solutions -
-            Conference on Modern AI, Entrepreneurship & Technology
-          </p>
-          <p class="hero-theme">“Human Centric AI and Future of Business”</p>
-          <p><strong>
-              March 19-20,2027
-            </strong>
-          </p>
+        <h2 class="hero-heading">IEEE INTERNATIONAL CONFERENCE</h2>
 
-          <div class="hero-stats">
-            <div class="stat-card">
-              <div class="stat-number">3</div>
-              <div>Conference Tracks</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">3+</div>
-              <div>Keynote Speakers</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">100+</div>
-              <div>Expected Papers</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">Hybrid</div>
-              <div>Mode</div>
+        <h1>IIPS-CoMET <span style="color: #f39c12">2027</span></h1>
+        <p class="hero-subtitle">
+          Integrating Interdisciplinary Perspectives and Solutions -
+          Conference on Modern AI, Entrepreneurship & Technology
+        </p>
+        <p class="hero-theme">“Human Centric AI and Future of Business”</p>
+        <p><strong>
+            March 19-20, 2027
+          </strong>
+        </p>
+
+        <!-- Simple Countdown Timer Panel -->
+        <div class="countdown-panel-container">
+          <div class="countdown-panel">
+            <h3 class="countdown-title" id="countdown-heading">Conference Starts In</h3>
+
+            <div class="countdown-timer">
+              <div class="countdown-unit" title="Days remaining">
+                <span class="countdown-number" id="countdown-days">--</span>
+                <span class="countdown-label">DAYS</span>
+              </div>
+              <div class="countdown-unit" title="Hours remaining">
+                <span class="countdown-number" id="countdown-hours">--</span>
+                <span class="countdown-label">HOURS</span>
+              </div>
+              <div class="countdown-unit" title="Minutes remaining">
+                <span class="countdown-number" id="countdown-minutes">--</span>
+                <span class="countdown-label">MINUTES</span>
+              </div>
+              <div class="countdown-unit" title="Seconds ticking live">
+                <span class="countdown-number" id="countdown-seconds">--</span>
+                <span class="countdown-label">SECONDS</span>
+              </div>
             </div>
           </div>
         </div>
+
+        <script>
+          // Immediate countdown initializer
+          (function() {
+            var daysEl = document.getElementById("countdown-days");
+            var hoursEl = document.getElementById("countdown-hours");
+            var minutesEl = document.getElementById("countdown-minutes");
+            var secondsEl = document.getElementById("countdown-seconds");
+            var headingEl = document.getElementById("countdown-heading");
+
+            var targetTime = new Date("2027-03-19T09:00:00+05:30").getTime();
+
+            function render() {
+              var now = new Date().getTime();
+              var distance = targetTime - now;
+
+              if (distance <= 0) {
+                if (daysEl) daysEl.textContent = "00";
+                if (hoursEl) hoursEl.textContent = "00";
+                if (minutesEl) minutesEl.textContent = "00";
+                if (secondsEl) secondsEl.textContent = "00";
+                if (headingEl) headingEl.textContent = "Conference Has Arrived!";
+                return;
+              }
+
+              var d = Math.floor(distance / (1000 * 60 * 60 * 24));
+              var h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+              var s = Math.floor((distance % (1000 * 60)) / 1000);
+
+              if (daysEl) daysEl.textContent = d < 10 ? "0" + d : String(d);
+              if (hoursEl) hoursEl.textContent = h < 10 ? "0" + h : String(h);
+              if (minutesEl) minutesEl.textContent = m < 10 ? "0" + m : String(m);
+              if (secondsEl) secondsEl.textContent = s < 10 ? "0" + s : String(s);
+            }
+
+            render();
+            setInterval(render, 1000);
+          })();
+        </script>
+
+        <!-- Quick Important Dates Strip -->
+        <div class="hero-quick-dates">
+          <div class="quick-date-pill">
+            <span class="quick-date-tag">Upcoming</span>
+            <span>Paper Submission Deadline: <strong>21st December 2026</strong></span>
+          </div>
+          <a href="#timeline" class="quick-dates-link">View All Important Dates &rarr;</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div class="stat-number">3</div>
+            <div>Conference Tracks</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">3+</div>
+            <div>Keynote Speakers</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">100+</div>
+            <div>Expected Papers</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">Hybrid</div>
+            <div>Mode</div>
+          </div>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
     <!-- About Section -->
     <section id="about" class="about">
       <div class="container">
@@ -115,7 +180,9 @@
               technologies. The traditional view of AI as a tool for pure automation is giving way to a more nuanced
               understanding of its role as a partner in human work. This shift necessitates a new approach that puts
               people at the center of technological change.</p>
-              <h2 >Conference Record Number: 73825</h2>
+            <div style="margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 10px; background: #e0f2fe; border: 1px solid #7dd3fc; padding: 8px 18px; border-radius: 8px; color: #0369a1; font-weight: 600;">
+              <span>📋</span> <strong>IEEE Conference Record Number: 73825</strong>
+            </div>
           </div>
         </div>
 
@@ -493,58 +560,50 @@
     <div class="timeline-container fade-in">
 
       <div class="timeline-item">
-        <div class="timeline-date">Oct 14, 2026</div>
-        <div class="timeline-content">
-          <h4>Paper Submission Start Date</h4>
-          <p>Submission portal opens for authors</p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-date">Dec 15, 2026</div>
+        <div class="timeline-date">21st December 2026</div>
         <div class="timeline-content">
           <h4>Paper Submission Deadline</h4>
-          <p>Last date to submit papers</p>
+          <p>Last date for submission of full length research papers</p>
         </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-date">Jan 30, 2027</div>
+        <div class="timeline-date">30th January 2027</div>
         <div class="timeline-content">
-          <h4>Acceptance Notification</h4>
-          <p>Authors notified about paper acceptance</p>
+          <h4>Acceptance Notification Starts</h4>
+          <p>Notification of paper acceptance begins for authors</p>
         </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-date">Feb 5, 2027</div>
+        <div class="timeline-date">Till 5th February 2027</div>
         <div class="timeline-content">
           <h4>Early Bird Registration</h4>
-          <p>Register till this date at discounted rates</p>
+          <p>Avail discounted registration rates before deadline</p>
         </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-date">Feb 12, 2027</div>
+        <div class="timeline-date">12th February 2027</div>
         <div class="timeline-content">
-          <h4>Final Manuscript &amp; Copyright Submission</h4>
-          <p>Submit the final manuscript and signed copyright form</p>
+          <h4>Submission of Final Manuscript &amp; Copyright</h4>
+          <p>Submit camera-ready manuscript and IEEE copyright form</p>
         </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-date">Feb 25, 2027</div>
+        <div class="timeline-date">25th February 2027</div>
         <div class="timeline-content">
           <h4>Last Date of Registration</h4>
-          <p>Last date for conference registration</p>
+          <p>Final closing date for conference author and delegate registration</p>
         </div>
       </div>
 
       <div class="timeline-item">
-        <div class="timeline-date">Mar 19-20, 2027</div>
+        <div class="timeline-date">19-20 March 2027</div>
         <div class="timeline-content">
-          <h4>Conference Dates</h4>
-          <p>IIPS-CoMET 2027 at Devi Ahilya University, Indore</p>
+          <h4>Conference Date</h4>
+          <p>IIPS-CoMET 2027 (Hybrid Mode) at Devi Ahilya University, Indore</p>
         </div>
       </div>
 
@@ -636,7 +695,10 @@
         <li>All registration fees are inclusive of 18% GST.</li>
         <li>At least one author registration is mandatory for each accepted paper.</li>
         <li>IEEE TEMS Members and IEEE Systems Council Members are eligible for a one-time 5% discount on the applicable registration fee, with a maximum discount of 5% only.</li>
-      </ul>
+        <li>One author registration covers one paper and one presenting author only. Authors submitting multiple papers must complete a separate registration for each paper, as per the applicable registration fee structure</li>
+        <li>If more than one co-author wishes to attend the conference, an additional attendee registration fee will be applicable for each additional participant. Certificate will be will be provided to registered co-authors.</li></li>
+        <li>Only accepted, registered, and presented   papers will be submitted to IEEE for consideration for inclusion in the IEEE Xplore® Digital Library, subject to compliance with applicable IEEE requirements, scope, quality standards, and publication policies; acceptance does not guarantee publication. The decision  of inclusion of paper presented in conference will solely depend upon IEEE Xplore ® Digital Library.</li>
+        </ul>
     </div>
   </div> <!-- end registration-table -->
 
@@ -782,7 +844,7 @@
                 Takshashila Campus or join remotely via the virtual platform.</p>
             </div>
           </div>
-
+ 
           <div class="faq-item">
             <button class="faq-question">
               <span>What is the paper acceptance rate?</span>
@@ -852,7 +914,7 @@
       </div>
     </footer>
     </section> <button class="back-to-top" onclick="scrollToTop()">↑</button>
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
     <script>
       // Conference Highlights slider
       (function () {
